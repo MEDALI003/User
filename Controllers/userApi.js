@@ -18,7 +18,7 @@ exports.register=async(req,res)=>{
             const token=jwt.sign(
                 {id:newUser._id},process.env.secretkey
             )
-            res.status(200).send({msg:"user added successfully",data:req.body,token})
+            res.status(200).send({msg:"user added successfully",data:newUser,token})
         }
 
     } catch (error) {
