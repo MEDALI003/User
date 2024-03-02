@@ -4,7 +4,7 @@ import { EDIT_PASSWORD, FAIL_USER, LOAD_USER, LOGIN, REGISTER } from "./userActi
 
 
 //REGISTER FUNCTION
- export const register=(newUser)= async(dispatch)=>{
+ export const register=(newUser)=> async(dispatch)=>{
         try {
             dispatch({type:LOAD_USER})
             const result=await axios.post("localhost:8000/api/User/register",newUser)
@@ -16,7 +16,7 @@ import { EDIT_PASSWORD, FAIL_USER, LOAD_USER, LOGIN, REGISTER } from "./userActi
 
  }
  //LOGIN FUNCTION
- export const login=(User)= async(dispatch)=>{
+ export const login=(User)=> async(dispatch)=>{
     try {
         dispatch({type:LOAD_USER})
         const result=await axios.post("localhost:8000/api/User/login",User)
@@ -28,7 +28,7 @@ import { EDIT_PASSWORD, FAIL_USER, LOAD_USER, LOGIN, REGISTER } from "./userActi
 
 }
 //EDIT_PASSWORd FUNCTION
-export const edit_password=(_id,password)= async(dispatch)=>{
+export const edit_password=(_id,password)=> async(dispatch)=>{
     try {
         dispatch({type:LOAD_USER})
         const result=await axios.put(`localhost:8000/api/User/changepassword/${_id}`,password)
